@@ -1,6 +1,12 @@
-##################################################
-# This is my dwm fork, to track my configuration #
-##################################################
+###############
+# My dwm fork #
+###############
+
+Patches applied:
+
+- dwm-fullgaps-6.4.diff
+- dwm-alpha-20230401-348f655.diff
+- dwm-actualfullscreen-20211013-cb3f58a.diff
 
 dwm - dynamic window manager
 ============================
