@@ -8,6 +8,7 @@ Patches applied:
 - dwm-alpha-20230401-348f655.diff
 - dwm-actualfullscreen-20211013-cb3f58a.diff
 - dwm-clientopacity
+- dwm-barpadding
 
 dwm - dynamic window manager
 ============================
