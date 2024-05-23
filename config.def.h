@@ -2,12 +2,12 @@
 
 /* appearance */
 static const unsigned int borderpx  = 3;        /* border pixel of windows */
-static const unsigned int gappx     = 10;        /* gaps between windows */
+static const unsigned int gappx     = 15;        /* gaps between windows */
 static const unsigned int snap      = 0;        /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const int vertpad	    = 10;	/* vertical padding of bar*/
-static const int sidepad	    = 10;	/* horizontal padding of bar*/
+static const int vertpad	    = 15;	/* vertical padding of bar*/
+static const int sidepad	    = 15;	/* horizontal padding of bar*/
 static const double activeopacity   = 0.9f;     /* Window opacity when it's focused (0 <= opacity <= 1) */
 static const double inactiveopacity = 0.5f;     /* Window opacity when it's inactive (0 <= opacity <= 1) */
 static const char *fonts[]          = { "monospace:size=12" };
