@@ -39,8 +39,8 @@ static const Rule rules[] = {
 	 *	WM_NAME(STRING) = title
 	 */
 	/* class      instance    title       tags mask     isfloating   focusopacity    unfocusopacity     monitor */
-	{ "Gimp",     NULL,       NULL,       0,            1,           1.0,            inactiveopacity,   -1 },
-	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           activeopacity,  inactiveopacity,   -1 },
+/*	{ "Gimp",     NULL,       NULL,       0,            1,           1.0,            inactiveopacity,   -1 },
+	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           activeopacity,  inactiveopacity,   -1 },*/
 };
 
 /* layout(s) */
