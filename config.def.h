@@ -10,7 +10,7 @@ static const int vertpad	    = 15;	/* vertical padding of bar*/
 static const int sidepad	    = 15;	/* horizontal padding of bar*/
 static const double activeopacity   = 0.8f;     /* Window opacity when it's focused (0 <= opacity <= 1) */
 static const double inactiveopacity = 0.5f;     /* Window opacity when it's inactive (0 <= opacity <= 1) */
-static const char *fonts[]          = { "monospace:size=12" };
+static const char *fonts[]          = { "JetBrainsMono Nerd Font:size=12" };
 static const char dmenufont[]       = "monospace:size=12";
 static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
