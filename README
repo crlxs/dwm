@@ -15,6 +15,49 @@ dwm - dynamic window manager
 dwm is an extremely fast, small, and dynamic window manager for X.
 
 
+Install the complete Debian environment
+---------------------------------------
+The rice Ansible playbook installs this fork, its build dependencies, fonts,
+picom, the jaguar wallpaper, and the other desktop tools. On Debian 12 or newer
+(x86_64 or ARM64), run as your desktop user:
+
+    sudo apt update
+    sudo apt install -y ansible-core git ca-certificates
+    git clone https://github.com/crlxs/rice.git ~/rice
+    cd ~/rice
+    ansible-playbook -i localhost, setup.yaml --ask-become-pass
+
+Skip the clone if ~/rice exists. Run the playbook without sudo; it requests
+sudo for system packages. For just the desktop, add --tags suckless.
+After logging out and back in, run startx from a local text console. Without
+the login environment, use startx "$HOME/.config/x11/xinitrc".
+Full documentation: https://github.com/crlxs/rice#readme
+
+The installer clones this fork into ~/.local/src/dwm and preserves existing
+clones and config.h. If this checkout is elsewhere, it remains separate from
+the installer's checkout. To use updated defaults in an existing installation,
+review local changes, update its source checkout, back up config.h, remove it,
+and rebuild so make copies config.def.h. New clones use the tracked defaults.
+
+Publish source and config.def.h changes with git commit and git push. The local
+config.h, compiled binaries, object files and backups are ignored. Installation
+never publishes changes automatically. Save your work and restart the X session
+after changing dwm; newly launched st and dmenu use their rebuilt settings.
+
+Fork appearance defaults
+------------------------
+The tracked config.def.h owns this fork's visual defaults. A fresh build copies
+it to config.h; an existing config.h is preserved. Edit both when changing your
+current installation and the defaults for future clones. Commit config.def.h
+when publishing settings; config.h is a local build configuration.
+
+Uses Noto Sans Mono, a Kanagawa Dragon background and gray selection colors. On Debian install
+fonts-noto-mono and fonts-noto-color-emoji. The rice installer also installs
+Symbols Nerd Font Mono for Neovim icons and configures font fallbacks.
+
+Client opacity is 0.8 when focused and 0.5 when inactive, with the original
+0xd0 bar alpha. Run a compositor such as picom to display transparency.
+
 Requirements
 ------------
 In order to build dwm you need the Xlib header files.
@@ -23,12 +66,12 @@ In order to build dwm you need the Xlib header files.
 Installation
 ------------
 Edit config.mk to match your local setup (dwm is installed into
-the /usr/local namespace by default).
+your ~/.local namespace by default).
 
-Afterwards enter the following command to build and install dwm (if
-necessary as root):
+Afterwards build and install dwm as your desktop user:
 
-    make clean install
+    make clean
+    make install PREFIX="$HOME/.local"
 
 
 Running dwm
